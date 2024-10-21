@@ -1,5 +1,4 @@
 import { kv } from '@vercel/kv';
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import TwitterFollowersClient from '@/components/TwitterFollowersClient';
 
 interface Follower {
