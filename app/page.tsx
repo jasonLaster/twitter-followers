@@ -1,4 +1,5 @@
-import { kv } from '@vercel/kv';
+import { sql } from "@vercel/postgres";
+
 import TwitterFollowersClient from '@/components/TwitterFollowersClient';
 
 interface Follower {
@@ -10,7 +11,12 @@ interface Follower {
 }
 
 async function getFollowers(): Promise<Follower[]> {
-  const allFollowers = await kv.get<Follower[]>('followers') || [];
+  const allFollowers: Follower[] = [];
+
+  const { rows } = await sql`SELECT * from followers`;
+
+  allFollowers.push(...(rows as Follower[]))
+
   const uniqueFollowers = allFollowers.reduce((acc, current) => {
     const x = acc.find(item => item.username === current.username);
     if (!x) {

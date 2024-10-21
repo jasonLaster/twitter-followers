@@ -5,8 +5,8 @@ interface Follower {
   username: string;
   handle: string;
   bio: string;
-  profileURL: string;
-  avatarURL: string;
+  profile_url: string;
+  avatar_url: string;
 }
 
 export function TwitterFollowers({ followers }: { followers: Follower[] }) {
@@ -17,7 +17,7 @@ export function TwitterFollowers({ followers }: { followers: Follower[] }) {
           <li key={index} className="p-6">
             <div className="flex items-start space-x-6">
               <Avatar className="w-16 h-16">
-                <AvatarImage src={follower.avatarURL} alt={follower.username} />
+                <AvatarImage src={follower.avatar_url} alt={follower.username} />
                 <AvatarFallback className="text-lg">{follower.username.slice(0, 2)}</AvatarFallback>
               </Avatar>
               <div className="flex-1 min-w-0 max-w-[70%]">
@@ -26,12 +26,12 @@ export function TwitterFollowers({ followers }: { followers: Follower[] }) {
                     {follower.username}
                   </p>
                   <a
-                    href={follower.profileURL}
+                    href={follower.profile_url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-muted-foreground hover:underline truncate"
                   >
-                    @{follower.handle}
+                    {follower.handle}
                   </a>
                 </div>
                 <p className="text-sm text-gray-500 line-clamp-2">{follower.bio}</p>

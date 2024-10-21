@@ -6,13 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "merge-followers": "ts-node scripts/merge-followers.ts"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.1",
     "@radix-ui/react-icons": "^1.3.0",
     "@radix-ui/react-scroll-area": "^1.2.0",
     "@vercel/kv": "^3.0.0",
+    "@vercel/postgres": "^0.10.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "fuse.js": "^7.0.0",
@@ -22,6 +24,7 @@
     "react-dom": "^18",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7",
+    "twitter-api-v2": "^1.18.0",
     "vercel": "^37.11.0"
   },
   "devDependencies": {
