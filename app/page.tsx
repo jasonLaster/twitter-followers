@@ -1,14 +1,7 @@
 import { sql } from "@vercel/postgres";
 
 import TwitterFollowersClient from '@/components/TwitterFollowersClient';
-
-interface Follower {
-  username: string;
-  handle: string;
-  bio: string;
-  profileURL: string;
-  avatarURL: string;
-}
+import { Follower } from "@/types/types";
 
 async function getFollowers(): Promise<Follower[]> {
   const allFollowers: Follower[] = [];

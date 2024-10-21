@@ -1,13 +1,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ScrollArea } from "@/components/ui/scroll-area";
-
-interface Follower {
-  username: string;
-  handle: string;
-  bio: string;
-  profile_url: string;
-  avatar_url: string;
-}
+import { Follower } from "@/types/types";
 
 export function TwitterFollowers({ followers }: { followers: Follower[] }) {
   return (

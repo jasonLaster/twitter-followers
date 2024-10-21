@@ -5,14 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 import { TwitterFollowers } from "@/components/TwitterFollowers";
 import Fuse from 'fuse.js';
-
-interface Follower {
-  username: string;
-  handle: string;
-  bio: string;
-  profileURL: string;
-  avatarURL: string;
-}
+import { Follower } from "@/types/types";
 
 export default function TwitterFollowersClient({ initialFollowers }: { initialFollowers: Follower[] }) {
   const [followers] = useState(initialFollowers)

@@ -1,13 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-
-interface Follower {
-  username: string;
-  handle: string;
-  bio: string;
-  profileURL: string;
-  avatarURL: string;
-}
+import { Follower } from '../types/types';
 
 function readJsonFile(filePath: string): Follower[] {
   const rawData = fs.readFileSync(filePath, 'utf8');
